@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Project Zero</title>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro'
+    rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css"
+    href="http://www.sci.brooklyn.cuny.edu/~sdexter/style.css" />
+</head>
+
+<body>
+    <div id="container">
+        <h1>Swing Exercise</h1>
+
+        <h2>Overview</h2>
+
+        <p>The main objective of this exercise is to allow you to
+            write some 'useful' Swing code.</p>
+
+
+        <h2>The Project</h2>
+
+        <p>
+            You'll be implementing a calculator, but one with a small
+            twist: it calculates in base 4 (quaternary) only. (<a
+                href="https://en.wikipedia.org/wiki/Quaternary_numeral_system">Wikipedia</a>
+            has way more information than you need.) So the only digits
+            are 0, 1, 2, and 3. And 2 + 2 is not 4, but 10. Among other things, this make some of the GUI set-up less tedious. Another way we'll keep things simple is by using integer division
+            (not least because "decimal digits" in non-decimal bases feel weird). So in base 10,
+            37 / 4 = 9, right? In quaternary, we'd write that as 211 /
+            10 = 21.</p>
+
+        <p>
+            In the skeleton, I've already set you up with some buttons.
+            I've also given you a skeleton of a class that will keep track of the calculator's "state" and do the <em>actual</em>
+            calculation. Your big task is to think through the event
+            handling and calculational logic. (Note that you can never
+            have a "purely" GUI application&mdash;there always has to be
+            some "business logic," too.)
+        </p>
+
+        <p>Even though is a fairly simple application, there are several things to think through (and watch out for). Here's a list to get you started:
+        <ul>
+          <li>You'll need to add a GUI component that corresponds to the 'screen' of the calculator so that you can 'view' the calculation in progress.</li>
+          <li>You'll need to think about what exactly should happen when each button is pressed. As a start, you can <em>generally</em> think about 'digit' buttons and 'operand' buttons. But perhaps not all digits are created equal--if I hit <code>0</code> several times, should the same kind of thing happen as if I hit <code>1</code> several times?</li>
+          <li>You'll need to develop <code>Base4CalcState</code> into a class that can <em>remember</em> everything about the current state of the calculation. Basically, any information you need to remember between one button-press and the next should be here. Provide methods that let your GUI both <em>update</em> the state and <em>get</em> elements of the state. It may be tempting to do some "remembering" in the GUI classes: don't! You will make your life easier in the long run if you do all your remembering in one place. (We'll talk about this more in Unit 4.)</li>
+          <li>Once you've decided what each button should do (and what it will need from the state, and what changes it will make to the state), you'll need to write event handlers for each different sort of button behavior.</li>
+        </ul>
+        This may sound like a lot, but once you get thinking/diagramming, you'll see that there aren't <em>so</em> many different things to do. If you realize that some buttons need the same basic behavior, write just one method that takes a parameter.
+        </p>
+</p>
+
+        
+        <p>Feel free to collaborate with teammates on this one.
+            Nothing needs to be handed in for this exercise, but the
+            next project might be based on this in some way.</p>
+
+        <p>Of course, you can get this working in any order you
+            like. Maybe you want to get the button-clicks "working"
+            first before you tackle the calculating logic. Maybe you
+            want to get the calculator working in base 10 before you
+            tackle the base 4 thing. Up to you...</p>
+    </div>
+</body>
+</html>
